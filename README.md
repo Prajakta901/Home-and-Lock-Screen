@@ -1,17 +1,44 @@
-# sk
+# Home and Lock Screen
 
-A new Flutter project.
+A Flutter app that recreates a themed home screen and a multi-page lock screen using bundled image assets. It is an **Android-runnable interface** and can be launched on an Android emulator or a connected Android device.
 
-## Getting Started
+## Screens
 
-This project is a starting point for a Flutter application.
+- **Home screen:** Displays a full-screen image. Swipe up to open the lock screen.
+- **Lock screen:** Shows three horizontally swipeable pages with image-based layouts. A page indicator shows the current page, and a row of image shortcuts appears at the bottom.
 
-A few resources to get you started if this is your first Flutter project:
+The home screen is implemented in `lib/main.dart`; the lock screen is implemented in `lib/page.dart`. Images used by the screens are stored in `lib/asset/` and listed in `pubspec.yaml`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Requirements
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Home-and-Lock-Screen
+- Flutter SDK with Dart **3.10.7 or later**, as specified in `pubspec.yaml`
+- Flutter SDK with Android support configured
+- An Android emulator or a connected Android device with USB debugging enabled
+
+## Run the app
+
+Open a terminal in this project directory (the directory containing `pubspec.yaml`). Start an Android emulator or connect an Android device, then run:
+
+```bash
+flutter pub get
+flutter run
+```
+
+To see available devices and choose an Android emulator or device:
+
+```bash
+flutter devices
+flutter run -d <device-id>
+```
+
+In VS Code, open this project directory, start an emulator or connect a device, then select **Run > Start Debugging** (or press **F5**). If prompted, choose the Flutter launch configuration.
+
+## Project files
+
+```text
+lib/
+  main.dart       # App entry point and home screen
+  page.dart       # Swipeable lock-screen pages
+  asset/          # Images displayed in the app
+pubspec.yaml      # Flutter package and asset configuration
+```
